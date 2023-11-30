@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="dispaly"></ul>
+
+    <script>
+
+        let person = [{
+            firstName : "div",
+            lastName : "patel"
+        },
+        
+        {firstName : "jay",
+            lastName : "patel"
+        }
+    
+    
+    ]
+
+    let myarray =[2,3,4,5];
+
+  let p =  myarray.map(function(a){
+
+        return "<li>"+ a*5+ "</li>";
+
+    })
+
+   document.getElementById("dispaly").innerHTML =p.join("")
+    
+
+        
+
+    </script>
+    
+</body>
+</html>
