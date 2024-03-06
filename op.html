@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+    
+  fetch("https://reqres.in/api/users?page=2").then(y=>y.json()).then(y=>{
+
+    let {data} = y;
+
+    let p = data.map((y)=>{
+             let {id,email,fist_name}   =y
+
+             console.log(email);
+
+    })
+
+  })
+
+      
+
+
+
+    </script>
+</body>
+</html>
