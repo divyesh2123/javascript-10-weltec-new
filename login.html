@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="email" id="email"/>
+    <input type="text" name="password" id="password"/>
+
+    <input type="submit" value="save" onclick="Login()"/>
+
+    <script>
+
+        const Login = ()=>{
+
+            let login = {
+                "email" : document.getElementById("email").value,
+                "password": document.getElementById("password").value
+                
+            }
+
+            fetch(" https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",{
+
+                method : "post",
+                body : JSON.stringify(login),
+                headers: {
+                    'Content-Type':"application/json",
+
+                }
+            })
+            .then(y=> y.json())
+            .then(y=>{
+
+                if(!y.message)
+                {
+                sessionStorage.setItem("token",y.jwtToken)
+
+                location.href = "ac.html";
+                }
+            })
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

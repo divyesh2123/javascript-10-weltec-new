@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="name" />
+    <input type="text" id="contactNumber" />
+    <button onclick="SaveInfo()">SaveInfo</button>
+
+    <script>
+
+
+const SaveInfo =()=>{
+
+    let o = JSON.parse(localStorage.getItem("employees")) || [];
+
+    let obj = {
+
+        "name": document.getElementById("name").value,
+
+        "contactNumber" : document.getElementById("contactNumber").value
+
+    };
+
+    o.push(obj);
+
+    localStorage.setItem("employees",JSON.stringify(o));
+
+
+}
+
+       
+
+    </script>
+    
+</body>
+</html>
